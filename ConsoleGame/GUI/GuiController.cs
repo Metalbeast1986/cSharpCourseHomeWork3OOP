@@ -27,55 +27,57 @@ namespace ConsoleGame.GUI
             //creditWindow.Render();
 
             //call out Select function to display all possible buttons
-            Active(Select(gameWindow.buttonList));
+            Select(gameWindow.buttonList);
+           // Active(Select(gameWindow.buttonList));
        }
         void Active(int index)
         {
             gameWindow.buttonList[index].SetActive();
+
         }
-        int Select(List<Button> buttonList)
+        void Select(List<Button> buttonList)
         {
-           
-            //get all list indexes
-            for (int i=0; i <= buttonList.Count; i++)
+            while (key != ConsoleKey.Enter)
             {
-
-                if (i == index)
-                {
-
-                }
-
-
                 key = Console.ReadKey(true).Key;
-
                 switch (key)
                 {
                     case ConsoleKey.LeftArrow:
+                    {
+                        index --;
+                        if (index <= 0)
                         {
-                            //Console.WriteLine("do it");
-                            /*
-                            if (index > 0 && index <= buttonList.Count)
-                            {*/
+                            index = buttonList.Count -1;
 
-                            Console.WriteLine("left");
-                            index -= index;
-                            //}
-                            break;
                         }
+                        
+                        //Console.WriteLine("left" + index);
+                        //    Active(index);
+                            break;
+                    }
                     case ConsoleKey.RightArrow:
-                        {/*
-                        if(index > 0 && index < buttonList.Count)
-                        {*/
-                            Console.WriteLine("right");
-                            index += index;
-                            // }
-                            break;
+                    {
+                        index ++;
+                        if(index >= buttonList.Count)
+                        {
+                            index = 0;
                         }
+                        
+                       // Console.WriteLine("right" + index);
+                         //   Active(index);
+                            break;
+                    }
                 }
 
-                //Console.WriteLine("button display "+i);
+                Console.WriteLine("index "+index);
+                Active(index);
+                gameWindow.Render();
             }
-            return index;
+
+
+          
+
+           // return index;
 
             /*
             //on key press change index. by calling function
@@ -99,10 +101,6 @@ namespace ConsoleGame.GUI
                 MessageBox.Show("Enter Key Pressed ");
             }
             */
-
-
-
-
             //gameWindow.buttonList[index]
         }
 
