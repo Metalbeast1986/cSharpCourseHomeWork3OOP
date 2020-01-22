@@ -1,0 +1,11 @@
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\obj\Debug\netcoreapp3.0\ConsoleGame.csprojAssemblyReference.cache
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\obj\Debug\netcoreapp3.0\ConsoleGame.AssemblyInfoInputs.cache
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\obj\Debug\netcoreapp3.0\ConsoleGame.AssemblyInfo.cs
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\bin\Debug\netcoreapp3.0\ConsoleGame.exe
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\bin\Debug\netcoreapp3.0\ConsoleGame.deps.json
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\bin\Debug\netcoreapp3.0\ConsoleGame.runtimeconfig.json
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\bin\Debug\netcoreapp3.0\ConsoleGame.runtimeconfig.dev.json
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\bin\Debug\netcoreapp3.0\ConsoleGame.dll
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\bin\Debug\netcoreapp3.0\ConsoleGame.pdb
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\obj\Debug\netcoreapp3.0\ConsoleGame.dll
+C:\Users\metal\source\VCSVakariniaiKursai\ConsoleGame\ConsoleGame\obj\Debug\netcoreapp3.0\ConsoleGame.pdb
