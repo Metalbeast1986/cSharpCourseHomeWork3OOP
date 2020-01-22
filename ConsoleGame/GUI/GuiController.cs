@@ -46,33 +46,36 @@ namespace ConsoleGame.GUI
                 }
 
 
+                key = Console.ReadKey(true).Key;
 
-                    Console.WriteLine("button display "+i);
-            }
+                switch (key)
+                {
+                    case ConsoleKey.LeftArrow:
+                        {
+                            //Console.WriteLine("do it");
+                            /*
+                            if (index > 0 && index <= buttonList.Count)
+                            {*/
 
-            key = Console.ReadKey(true).Key;
-
-            switch (key)
-            {
-                case ConsoleKey.LeftArrow:
-                    {/*
-                        if (index > 0 && index <= buttonList.Count)
-                        {*/
-                        Console.WriteLine("left");
+                            Console.WriteLine("left");
                             index -= index;
-                        //}
-                        break;
-                    }
-                case ConsoleKey.RightArrow:
-                    {/*
+                            //}
+                            break;
+                        }
+                    case ConsoleKey.RightArrow:
+                        {/*
                         if(index > 0 && index < buttonList.Count)
                         {*/
-                        Console.WriteLine("right");
+                            Console.WriteLine("right");
                             index += index;
-                       // }
-                        break;
-                    }
+                            // }
+                            break;
+                        }
+                }
+
+                //Console.WriteLine("button display "+i);
             }
+            return index;
 
             /*
             //on key press change index. by calling function
@@ -96,10 +99,10 @@ namespace ConsoleGame.GUI
                 MessageBox.Show("Enter Key Pressed ");
             }
             */
-            
 
 
-            return index;
+
+
             //gameWindow.buttonList[index]
         }
 
