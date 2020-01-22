@@ -43,5 +43,6 @@ namespace ConsoleGame.GUI
 
             Console.SetCursorPosition(0, 0);
         }
+        
     }
 }

@@ -1,17 +1,14 @@
+using ConsoleGame.GUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace ConsoleGame.GUI
 {
     class Button : GuiObject
     {
-        private Frame _notActiveFrame;
-        private Frame _activeFrame;
-
         public bool IsActive { get; private set; } = false;
 
         public string Label
@@ -22,7 +19,12 @@ namespace ConsoleGame.GUI
 
         private string _label = "";
 
+        private Frame _notActiveFrame;
+        private Frame _activeFrame;
+
         private TextLine _textLine;
+
+
 
         public Button(int x, int y, int width, int height, string buttonText) : base(x, y, width, height)
         {
@@ -31,8 +33,6 @@ namespace ConsoleGame.GUI
 
             _textLine = new TextLine(x + 1, y + 1 + ((height - 2) / 2), width - 2, buttonText);
         }
-
-
 
         public override void Render()
         {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\metal\\source\\VCSVakariniaiKursai\\ConsoleGame\\ConsoleGame\\ConsoleGame.csproj": {}
+    "C:\\Users\\metal\\Documents\\GitHub\\ND3\\ConsoleGame\\ConsoleGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\metal\\source\\VCSVakariniaiKursai\\ConsoleGame\\ConsoleGame\\ConsoleGame.csproj": {
+    "C:\\Users\\metal\\Documents\\GitHub\\ND3\\ConsoleGame\\ConsoleGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\metal\\source\\VCSVakariniaiKursai\\ConsoleGame\\ConsoleGame\\ConsoleGame.csproj",
+        "projectUniqueName": "C:\\Users\\metal\\Documents\\GitHub\\ND3\\ConsoleGame\\ConsoleGame.csproj",
         "projectName": "ConsoleGame",
-        "projectPath": "C:\\Users\\metal\\source\\VCSVakariniaiKursai\\ConsoleGame\\ConsoleGame\\ConsoleGame.csproj",
+        "projectPath": "C:\\Users\\metal\\Documents\\GitHub\\ND3\\ConsoleGame\\ConsoleGame.csproj",
         "packagesPath": "C:\\Users\\metal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\metal\\source\\VCSVakariniaiKursai\\ConsoleGame\\ConsoleGame\\obj\\",
+        "outputPath": "C:\\Users\\metal\\Documents\\GitHub\\ND3\\ConsoleGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

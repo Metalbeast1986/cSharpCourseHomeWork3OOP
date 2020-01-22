@@ -10,7 +10,7 @@ namespace ConsoleGame.GUI
 
         public TextLine(int x, int y, int width, string label) : base(x, y, width, 0)
         {
-            label = label;
+            Label = label;
         }
         public string Label
         {
