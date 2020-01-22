@@ -6,15 +6,21 @@ namespace ConsoleGame.GUI
 {
     class GuiController
     {
-       
+        private GameWindow gameWindow;
+        private CreditWindow creditWindow;
+
         public GuiController()
         {
-            GameWindow gameWindow = new GameWindow();
-            gameWindow.Render();
+            gameWindow = new GameWindow();
 
-            CreditWindow creditWindow = new CreditWindow();
-            creditWindow.Render();
+            creditWindow = new CreditWindow();
+
         }
+       public void ShowMenu()
+       {
+            gameWindow.Render();
+            creditWindow.Render();
+       }
         
     }
 }
