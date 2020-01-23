@@ -17,7 +17,7 @@ namespace ConsoleGame.GUI
             _titleTextBlock = new TextBlock(10, 5, 100, new List<String> { "Call of Duty", "Vardas Pavardaitis kuryba!", "Made in Vilnius Coding School!" });
 
             _startButton = new Button(20, 13, 18, 5, "Start");
-            //_startButton.SetActive();
+            _startButton.SetActive();
 
             _creditsButton = new Button(50, 13, 18, 5, "Credits");
 

@@ -23,17 +23,29 @@ namespace ConsoleGame.GUI
        public void ShowMenu()
        {
             //Ar ShowMenu funkcijoi zemiau einantys elementai reikalingi?
-           gameWindow.Render();
+            gameWindow.Render();
             //creditWindow.Render();
 
             //call out Select function to display all possible buttons
             Select(gameWindow.buttonList);
            // Active(Select(gameWindow.buttonList));
        }
-        void Active(int index)
+        void Active(int index, List<Button> buttonList)
         {
             gameWindow.buttonList[index].SetActive();
+            //Console.WriteLine("activate " + index);
 
+            for (int i = 0; i < buttonList.Count; i++)
+            {
+                if (i != index)
+                {
+                    //deactivate all other buttons
+                    //Console.WriteLine("deactivate " + i);
+                    gameWindow.buttonList[i].SetInActive();
+
+                }
+            }
+            gameWindow.Render();
         }
         void Select(List<Button> buttonList)
         {
@@ -45,15 +57,12 @@ namespace ConsoleGame.GUI
                     case ConsoleKey.LeftArrow:
                     {
                         index --;
-                        if (index <= 0)
+                        if (index < 0)
                         {
                             index = buttonList.Count -1;
 
                         }
-                        
-                        //Console.WriteLine("left" + index);
-                        //    Active(index);
-                            break;
+                        break;
                     }
                     case ConsoleKey.RightArrow:
                     {
@@ -61,17 +70,14 @@ namespace ConsoleGame.GUI
                         if(index >= buttonList.Count)
                         {
                             index = 0;
-                        }
-                        
-                       // Console.WriteLine("right" + index);
-                         //   Active(index);
-                            break;
+                        }            
+                        break;
                     }
                 }
 
-                Console.WriteLine("index "+index);
-                Active(index);
-                gameWindow.Render();
+                //Console.WriteLine("index "+index);
+                Active(index, buttonList);
+                //gameWindow.Render();
             }
 
 
