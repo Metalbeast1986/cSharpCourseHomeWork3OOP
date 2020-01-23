@@ -22,6 +22,7 @@ namespace ConsoleGame
             */
 
             //GameController myGame = new GameController();
+
             //myGame.StartGame();
 
             GuiController guiController = new GuiController();

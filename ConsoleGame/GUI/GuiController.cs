@@ -1,3 +1,4 @@
+using ConsoleGame.Game;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,30 +23,32 @@ namespace ConsoleGame.GUI
         }
        public void ShowMenu()
        {
-            //Ar ShowMenu funkcijoi zemiau einantys elementai reikalingi?
             gameWindow.Render();
             //creditWindow.Render();
 
             //call out Select function to display all possible buttons
             Select(gameWindow.buttonList);
-           // Active(Select(gameWindow.buttonList));
        }
         void Active(int index, List<Button> buttonList)
         {
             gameWindow.buttonList[index].SetActive();
-            //Console.WriteLine("activate " + index);
 
             for (int i = 0; i < buttonList.Count; i++)
             {
                 if (i != index)
                 {
                     //deactivate all other buttons
-                    //Console.WriteLine("deactivate " + i);
                     gameWindow.buttonList[i].SetInActive();
-
                 }
             }
+
             gameWindow.Render();
+
+            if (key == ConsoleKey.Enter)
+            {
+                checkIndexValue(index);
+            }
+
         }
         void Select(List<Button> buttonList)
         {
@@ -75,41 +78,38 @@ namespace ConsoleGame.GUI
                     }
                 }
 
-                //Console.WriteLine("index "+index);
                 Active(index, buttonList);
-                //gameWindow.Render();
             }
-
-
-          
-
-           // return index;
-
-            /*
-            //on key press change index. by calling function
-            if (ConsoleKey.LeftArrow) // if left arrow
-            {
-                if (index > 0 && index < buttonList.Count)
-                {
-                    index += index;
-                }
-
-                MessageBox.Show("Enter Key Pressed ");
-            }
-            if (e.KeyCode == Keys.Enter) // if right arrow
-            {
-                if (index > 0 && index <= buttonList.Count)
-                {
-
-                    index -= index;
-                }
-
-                MessageBox.Show("Enter Key Pressed ");
-            }
-            */
-            //gameWindow.buttonList[index]
+           
         }
+        public void checkIndexValue(int index)
+        {
+            
+            //myGame.StartGame();
+            if (index == 0)
+            {
+                //start game
+                GameController myGame = new GameController();
+                myGame.StartGame();
 
-        
+                //how to exit menu, opposite of gameWindow.Render();
+
+            }
+            else if (index == 1)
+            {
+                //show credit window
+                //gameWindow.Render();
+                creditWindow.Render();
+                if (key == ConsoleKey.Enter || key == ConsoleKey.Escape)
+                {
+                    //how to exit menu, opposite of creditWindow.Render();
+                }
+            }
+            else
+            {
+                //how to exit application
+                System.Environment.Exit(0);
+            }
+        }
     }
 }
