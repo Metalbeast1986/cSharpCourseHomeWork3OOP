@@ -11,7 +11,8 @@ namespace ConsoleGame.GUI
     {
         private GameWindow gameWindow;
         private CreditWindow creditWindow;
-
+        bool needToRender = true;
+        bool creditWindowRender = true;
         int index = 0;
         ConsoleKey key;
 
@@ -23,14 +24,18 @@ namespace ConsoleGame.GUI
         }
        public void ShowMenu()
        {
-            gameWindow.Render();
-            //creditWindow.Render();
+            if (needToRender)
+            {
+                gameWindow.Render();
+                //creditWindow.Render();
 
-            //call out Select function to display all possible buttons
-            Select(gameWindow.buttonList);
-       }
+                //call out Select function to display all possible buttons
+                Select(gameWindow.buttonList);
+            }
+        }
         void Active(int index, List<Button> buttonList)
         {
+            
             gameWindow.buttonList[index].SetActive();
 
             for (int i = 0; i < buttonList.Count; i++)
@@ -52,64 +57,67 @@ namespace ConsoleGame.GUI
         }
         void Select(List<Button> buttonList)
         {
-            while (key != ConsoleKey.Enter)
+            creditWindowRender = true;
+            needToRender = true;
+            do
             {
                 key = Console.ReadKey(true).Key;
                 switch (key)
                 {
                     case ConsoleKey.LeftArrow:
-                    {
-                        index --;
-                        if (index < 0)
                         {
-                            index = buttonList.Count -1;
+                            index--;
+                            if (index < 0)
+                            {
+                                index = buttonList.Count - 1;
 
+                            }
+                            break;
                         }
-                        break;
-                    }
                     case ConsoleKey.RightArrow:
-                    {
-                        index ++;
-                        if(index >= buttonList.Count)
                         {
-                            index = 0;
-                        }            
-                        break;
-                    }
+                            index++;
+                            if (index >= buttonList.Count)
+                            {
+                                index = 0;
+                            }
+                            break;
+                        }
                 }
 
                 Active(index, buttonList);
-            }
-           
+            } while (needToRender);
+
         }
         public void checkIndexValue(int index)
         {
-            
             //myGame.StartGame();
+
             if (index == 0)
             {
+                needToRender = false;
                 //start game
                 GameController myGame = new GameController();
                 myGame.StartGame();
 
-                //how to exit menu, opposite of gameWindow.Render();
-
             }
             else if (index == 1)
             {
-                //show credit window
-                //gameWindow.Render();
-                creditWindow.Render();
-                if (key == ConsoleKey.Enter || key == ConsoleKey.Escape)
-                {
-                    //how to exit menu, opposite of creditWindow.Render();
+
+                if (creditWindowRender) { 
+                    creditWindow.Render();
                 }
+                if (key == ConsoleKey.Enter || key == ConsoleKey.Escape)
+                {   
+                    creditWindowRender = !creditWindowRender;
+                }  
             }
             else
             {
                 //how to exit application
                 System.Environment.Exit(0);
             }
+           
         }
     }
 }
