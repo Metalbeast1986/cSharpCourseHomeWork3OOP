@@ -27,7 +27,6 @@ namespace ConsoleGame.GUI
             if (needToRender)
             {
                 gameWindow.Render();
-                //creditWindow.Render();
 
                 //call out Select function to display all possible buttons
                 Select(gameWindow.buttonList);
@@ -48,7 +47,6 @@ namespace ConsoleGame.GUI
             }
 
             gameWindow.Render();
-
             if (key == ConsoleKey.Enter)
             {
                 checkIndexValue(index);
@@ -58,7 +56,7 @@ namespace ConsoleGame.GUI
         void Select(List<Button> buttonList)
         {
             creditWindowRender = true;
-            needToRender = true;
+            
             do
             {
                 key = Console.ReadKey(true).Key;
@@ -70,7 +68,7 @@ namespace ConsoleGame.GUI
                             if (index < 0)
                             {
                                 index = buttonList.Count - 1;
-
+                                
                             }
                             break;
                         }
@@ -85,25 +83,22 @@ namespace ConsoleGame.GUI
                         }
                 }
 
-                Active(index, buttonList);
+             Active(index, buttonList);
             } while (needToRender);
 
         }
         public void checkIndexValue(int index)
         {
-            //myGame.StartGame();
 
             if (index == 0)
             {
-                needToRender = false;
                 //start game
                 GameController myGame = new GameController();
                 myGame.StartGame();
-
+                needToRender = false;
             }
             else if (index == 1)
             {
-
                 if (creditWindowRender) { 
                     creditWindow.Render();
                 }

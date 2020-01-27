@@ -13,21 +13,10 @@ namespace ConsoleGame
         static void Main()
         {
             Console.CursorVisible = false;
-            /* 
-              GameWindow gameWindow = new GameWindow();
-            gameWindow.Render();
-
-            CreditWindow creditWindow = new CreditWindow();
-            creditWindow.Render();
-            */
-
-            //GameController myGame = new GameController();
-
-            //myGame.StartGame();
-
             GuiController guiController = new GuiController();
 
             guiController.ShowMenu();
+            
 
             Console.ReadKey();
         }
