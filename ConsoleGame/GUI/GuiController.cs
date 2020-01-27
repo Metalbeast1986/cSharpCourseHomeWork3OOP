@@ -9,7 +9,7 @@ namespace ConsoleGame.GUI
 {
     class GuiController
     {
-        private GameWindow gameWindow;
+        public GameWindow gameWindow;
         private CreditWindow creditWindow;
         bool needToRender = true;
         bool creditWindowRender = true;
@@ -31,6 +31,7 @@ namespace ConsoleGame.GUI
                 //call out Select function to display all possible buttons
                 Select(gameWindow.buttonList);
             }
+            
         }
         void Active(int index, List<Button> buttonList)
         {
@@ -93,6 +94,8 @@ namespace ConsoleGame.GUI
             if (index == 0)
             {
                 //start game
+                Console.Clear();
+
                 GameController myGame = new GameController();
                 myGame.StartGame();
                 needToRender = false;

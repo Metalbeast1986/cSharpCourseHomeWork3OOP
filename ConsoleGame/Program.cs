@@ -16,7 +16,6 @@ namespace ConsoleGame
             GuiController guiController = new GuiController();
 
             guiController.ShowMenu();
-            
 
             Console.ReadKey();
         }
